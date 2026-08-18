@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Make 10: Number Blocks</title>
+<style>
+  :root {
+    --bg: #f2f7f5; --card: #ffffff; --ink: #1c2b24; --muted: #5a7266;
+    --line: #d5e3db; --accent: #437d60;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121a16; --card: #1a241e; --ink: #e6efe9; --muted: #93a89e;
+      --line: #2a3a31; --accent: #7fc09b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 24px 16px 64px;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 6px; }
+  h2 { font-size: 1.2rem; margin: 34px 0 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1rem; margin: 22px 0 4px; }
+  .meta { color: var(--muted); font-size: .92rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 18px 0; }
+  a { color: var(--accent); }
+  nav.lang { display: flex; gap: 8px; margin-bottom: 22px; }
+  nav.lang a { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; color: var(--ink); font-size: .9rem; background: var(--card); }
+  footer { margin-top: 40px; color: var(--muted); font-size: .88rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Support</h1>
+<p class="meta">Make 10: Number Blocks</p>
+
+<div class="card">
+  <p><strong>Email:</strong> <a href="mailto:datvu.meo@gmail.com">datvu.meo@gmail.com</a></p>
+  <p class="meta">I answer in English. Please include your device model and iOS version, and — for anything about the leaderboard — say whether Game Center is switched on in the game's Settings.</p>
+</div>
+
+<nav class="lang"><a href="privacy.html">Privacy Policy</a></nav>
+
+<h2>Frequently asked</h2>
+
+<h3>How do I play?</h3>
+<p>Drop a numbered block onto the 5×5 board. When a whole row or a whole column adds up to <strong>exactly 10</strong>, that line clears and scores. Every block sits in a row and a column at the same time, so each placement is a bet on two lines at once.</p>
+
+<h3>Tap or drag?</h3>
+<p>Both, and it is the same gesture. Press a block and it lifts. Let go without moving and it stays in your hand — then tap a cell to place it. Or keep moving and the block follows your finger, riding one cell above it so your thumb never covers the number. While you drag, both of that cell's sum gutters show the totals the move would produce, in the colour they would be: green if the line clears, red if you are about to overshoot.</p>
+
+<h3>What does a red line mean? It never clears again.</h3>
+<p>That line is <em>stuck</em>: it has gone past 10, and nothing you place in it can bring it back down. It is not dead, though. Every cell belongs to two lines, so clearing the crossing line empties cells out of the stuck one — and if that drops it to exactly 10, it clears in the same move, as part of the chain. Rescuing a stuck line through the other axis is the core of the game.</p>
+
+<h3>Can I take a move back?</h3>
+<p>Yes — three undos per run, shown on the undo button. They are free and there is nothing to buy to get more.</p>
+
+<h3>What is the "?" on the board?</h3>
+<p>That is where the next pressure block will land on its own. You know <em>where</em>, not <em>what</em>. Fill that cell before it drops and the drop moves somewhere else — a legitimate tactic, and often the right one. Pressure blocks never land on a line that would go over 10, and they stop entirely when the board is nearly full.</p>
+
+<h3>What does "NEXT" show?</h3>
+<p>The hand after the current one, in full. It is truthful — the blocks you see are the blocks you get, so you can plan across six numbers instead of three.</p>
+
+<h3>How does Endless get harder?</h3>
+<p>There are no difficulty tiers, just one smooth climb, and you climb it by <em>clearing</em>. As you go, pressure blocks drop more often and the pool leans further towards 7, 8 and 9. The pill at the top shows the rung you are on ("Endless · Lv 3").</p>
+
+<h3>How do I get on the world leaderboard?</h3>
+<p>Turn <strong>Settings → Game Center</strong> on. It arrives switched off; until you turn it on, the game never asks iOS to sign you in and nothing leaves your device. Once it is on, your best Endless score is posted to Game Center and the Scores screen can open Apple's own leaderboard, with its friends tab and time filters.</p>
+
+<h3>The world board says the build cannot reach Game Center</h3>
+<p>Check, in this order: Game Center is on in the game's Settings; you are signed in to Game Center in iOS <strong>Settings ▸ Game Center</strong>; and you are on a real iPhone rather than a simulator. If iOS showed a sign-in sheet and you dismissed it, switch the game's Game Center toggle off and on again to ask once more.</p>
+
+<h3>My name on the board is wrong</h3>
+<p>The name and photo on the leaderboard are your <strong>Game Center alias</strong>, which belongs to your Apple Account. The game does not choose it and cannot change it — edit it in iOS <strong>Settings ▸ Game Center</strong>. There is no nickname to type inside this game.</p>
+
+<h3>My score is missing from the board</h3>
+<p>Game Center keeps only your best, so a lower run will not appear. If your best is missing, finish a run with Game Center on and give it a moment; the game re-posts your best when sign-in completes.</p>
+
+<h3>Are there ads or things to buy?</h3>
+<p>No. No advertising, no in-app purchases, no subscriptions. Every mode and every booster in the game is already yours.</p>
+
+<h3>Does it work offline?</h3>
+<p>Completely. The whole game runs on your device, and your scores are kept locally whether or not Game Center is on.</p>
+
+<h3>Which languages does it speak?</h3>
+<p>English, Tiếng Việt, 日本語, 한국어, Deutsch and Português (BR). Change it in <strong>Settings → Language</strong>.</p>
+
+<h3>The game is hard to read, or the motion bothers me</h3>
+<p>Settings has <strong>Colourblind marks</strong>, which adds a shape to the green and red states rather than relying on colour alone, and <strong>Reduce motion</strong>, which calms the animations. There is also a light/dark/auto <strong>Appearance</strong> setting, plus sound and vibration switches.</p>
+
+<h3>How do I delete my data?</h3>
+<p>Use <strong>Settings → Erase my data</strong> — that wipes every score, run and setting on the device. A Game Center score belongs to your Apple Account instead, so clear that in iOS <strong>Settings ▸ Game Center</strong>. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h3>I lost my progress</h3>
+<p>Scores are saved on the device only, so deleting the app or moving to a new phone does not carry them over. If a run vanished for another reason, email me with your device model and iOS version and what happened just before it.</p>
+
+<h3>What does it run on?</h3>
+<p>iPhone, iOS 15 or later, portrait.</p>
+
+<footer>Make 10: Number Blocks · <a href="privacy.html">Privacy Policy</a></footer>
+
+</main>
+</body>
+</html>
