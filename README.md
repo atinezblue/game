@@ -1,6 +1,6 @@
 # Game Privacy Policy and Support
 
-## Bottle Flip: World Tour
+## Real Flip: Bottle World Tour
 
 | Page | URL |
 |---|---|
