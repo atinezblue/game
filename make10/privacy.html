@@ -30,6 +30,10 @@
   .card h3 { font-size: 1rem; margin: 0 0 8px; }
   a { color: var(--accent); }
   ul { padding-left: 20px; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .scroll { overflow-x: auto; }
   nav.top { display: flex; gap: 8px; margin-bottom: 24px; }
   nav.top a {
     text-decoration: none; border: 1px solid var(--line); border-radius: 999px;
@@ -44,41 +48,77 @@
 <header>
   <h1>Privacy Policy</h1>
   <p class="meta">Make 10: Number Blocks</p>
-  <p class="meta">Effective date: 18 August 2026</p>
+  <p class="meta">Effective date: 26 August 2026</p>
 </header>
 
 <nav class="top"><a href="support.html">Support</a></nav>
 
-<p>I am Dat Vu, an independent developer, and I make Make 10: Number Blocks on my own. This policy explains what the game does with information, in plain terms. It is short because the game collects nothing.</p>
+<p>I am Dat Vu, an independent developer, and I make Make 10: Number Blocks on my own. This policy explains, in plain terms, what the game does with information. It covers the iOS and the Android version, which behave the same way.</p>
 
 <h2>The short version</h2>
-<p>The game has no server of mine, no account, no login, and no advertising. Everything it knows about you — your progress, your scores, your settings — lives on your phone and I never see it. The one thing that can ever leave your device is a single number, your best Endless score, and only to Apple Game Center, and only after you switch Game Center on yourself. The App Store privacy label for this app is <strong>Data Not Collected</strong>, and that is the literal truth: the app contains no networking code of its own at all.</p>
+<p>Your progress, your scores and your settings live on your phone. Two things reach the internet, and this page is mostly about them:</p>
+<ul>
+  <li><strong>Advertising.</strong> The game shows one banner ad, supplied by Google AdMob, along the bottom edge of the cards you open (Settings, Scores, the mode picker, the end-of-run card). There is no ad during play, no full-screen ad and no video ad.</li>
+  <li><strong>The world board</strong>, which is <strong>off when you install the game</strong>. While it is off, nothing about you leaves the device — no account is created and no request of any kind is made. If you switch it on, your best score and the name you play under are published to a public leaderboard.</li>
+</ul>
+<p>There are no in-app purchases, no subscriptions, no analytics SDK, and no account of mine to sign in to.</p>
 
 <h2>What stays on your device</h2>
 <div class="card">
-<p>One small save file on your phone holds your best scores, your recent runs, your current run, your settings (sound, vibration, reduce motion, colourblind marks, appearance, language), and how far you got through the first-run tutorial. I do not receive any of it unless you paste it into an email to me.</p>
-<p>You can wipe all of it at any time with <strong>Settings → Erase my data</strong>.</p>
+<p>One small save file holds your best scores, your recent runs, the run in progress, your settings (sound, vibration, reduce motion, appearance), your player name, the players you have chosen to hide, and how far you got through the first-run tutorial. I never receive any of it.</p>
+<p>Deleting the app removes this file the way your phone normally does.</p>
 </div>
 
-<h2>Game Center, if you turn it on</h2>
+<h2>Advertising</h2>
 <div class="card">
-  <h3>What it sends, and to whom</h3>
-  <p>Game Center is <strong>off</strong> when you install the game. While it is off the game never even asks iOS to sign you in, so no sign-in banner appears and nothing at all is sent.</p>
-  <p>If you switch it on in <strong>Settings → Game Center</strong>, the game asks iOS to sign you in with your Apple Account and posts <em>one integer</em> — your best Endless score — to the Apple leaderboard <code>make10.endless</code>. That is the entire payload. There is no nickname, no message, no profile, and no second leaderboard.</p>
-  <p>The name and photo shown next to that score on the board are your <strong>Game Center alias</strong>, which belongs to your Apple Account. I do not choose it, cannot change it, and never receive it. The game has no way to read the leaderboard back — the world board you see is Apple's own screen, opened inside the game.</p>
-  <p>Because there is no text you can type and no profile you can fill in, there is no user-generated content in this game to moderate or report.</p>
+  <h3>What is shown, and by whom</h3>
+  <p>The banner comes from <strong>Google AdMob</strong>. Serving it means Google's advertising SDK runs inside the app, and Google receives information from your device to select, deliver, measure and protect that ad against fraud. That typically includes a device advertising identifier, coarse information about your device and app, and whether an ad was seen or tapped.</p>
+  <p>What Google does with it is governed by Google's own terms, not mine: see <a href="https://business.safety.google/privacy/">Google's Business Data Responsibility page</a> and <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</p>
+</div>
+<div class="card">
+  <h3>Your choices about ads</h3>
+  <p>If you are in the EEA, the UK or Switzerland, a Google consent form appears before any ad is requested, and your answer decides whether ads can be personalised. You can change that answer at any time in the game: <strong>Settings → Ad privacy choices</strong>. That entry only appears where the choice applies.</p>
+  <p>On iOS the game <strong>never asks for App Tracking Transparency permission</strong> and does not track you across other companies' apps or websites.</p>
+  <p>On Android you can reset or delete your advertising ID in your phone's <strong>Settings ▸ Google ▸ Ads</strong>. On iOS, <strong>Settings ▸ Privacy &amp; Security ▸ Tracking</strong> and <strong>Apple Advertising</strong> control the equivalent.</p>
+  <p>There is no paid option to remove the banner today.</p>
 </div>
 
+<h2>The world board, if you turn it on</h2>
+<div class="card">
+  <h3>How it starts</h3>
+  <p>The world board is <strong>off</strong> when you install the game, and the game asks you once whether you want to join. While it is off no anonymous account is created for you and no request is made. You turn it on — and off again — in <strong>Settings → World board</strong>.</p>
+</div>
+<div class="card">
+  <h3>What is published, and where</h3>
+  <p>It runs on <strong>Google Firebase</strong> (Cloud Firestore, with Firebase Anonymous Authentication), in a project I control. There are three boards, one per rulebook (Easy, Normal, Hard), each holding the top 100 scores. When your best score qualifies, one row is written for you:</p>
+  <div class="scroll"><table>
+    <tr><th>Field</th><th>What it is</th></tr>
+    <tr><td>Player name</td><td>The name you play under. Public — everyone on the board sees it.</td></tr>
+    <tr><td>Score, best streak, moves</td><td>The numbers the row displays.</td></tr>
+    <tr><td>Player id</td><td>A random id the game generated on this device. It is not your phone's identifier, contains nothing about you, and exists so one player is one row.</td></tr>
+    <tr><td>Anonymous user id</td><td>Created by Firebase Anonymous Authentication so the server can tell that a row belongs to you and refuse writes from anyone else. It is not linked to an email address, a phone number or a Google/Apple account.</td></tr>
+    <tr><td>Updated at</td><td>When the row was last written.</td></tr>
+  </table></div>
+  <p>That is the whole payload. A run that is not a personal best sends nothing at all, and a score that the top 100 already outranks is not sent either.</p>
+</div>
+<div class="card">
+  <h3>Your name on the board</h3>
+  <p>You can type a name in <strong>Settings → Player name</strong>. Until you do, the game generates one for you (an animal and a number, like "fox 41233"). A name is checked before it is accepted and before it is published: names carrying contact details or offensive words are refused.</p>
+  <p>Please do not put your real name, email address, phone number or any other personal detail in it. It is shown to every other player.</p>
+</div>
+<div class="card">
+  <h3>Names you would rather not see, and reporting one</h3>
+  <p>Tap any row on the world board and you can <strong>hide that player</strong> — the row disappears from your board immediately, and that choice stays on your device and is never published. The same sheet lets you <strong>report the name</strong>, which files it for me to review and take down; a report carries the reported player's id and name, the board it was on, and the anonymous user id of the person reporting, so that reports cannot be filed by nobody. Reports are write-only: no player can read them.</p>
+  <p>You can undo every hide with <strong>Settings → Show hidden players again</strong>.</p>
+</div>
 <div class="card">
   <h3>How to delete it</h3>
-  <p>A Game Center score belongs to your Apple Account, not to me — I have no server holding a copy and no way to reach into Apple's board. To remove it, use iOS <strong>Settings ▸ Game Center</strong> on your device, which is where Apple lets you manage or delete your Game Center data. Turning the switch off inside the game stops any further posting.</p>
-  <p>To delete everything on the device itself, use <strong>Settings → Erase my data</strong> in the game, or delete the app.</p>
-  <p>Apple's privacy information: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
+  <p>Switching <strong>Settings → World board</strong> off means <em>gone</em>, not "no longer looked at": the game deletes the rows it published for you on all three boards <strong>and</strong> deletes the anonymous Firebase account itself. Nothing of yours is left on the server.</p>
+  <p>To remove what is on the device as well, delete the app. If something goes wrong and a row appears to be stuck, email me and I will remove it by hand.</p>
 </div>
 
-<h2>No ads, no purchases, no analytics</h2>
+<h2>No purchases, no analytics of mine</h2>
 <div class="card">
-<p>The game shows <strong>no advertising</strong>. There is no ad network in it, so no advertising identifier, no ad profile, and no ad measurement. The game <strong>never asks for iOS tracking permission</strong>, because it has nothing to track you with.</p>
 <p>There are <strong>no in-app purchases and no subscriptions</strong>. Nothing in the game costs money after you have it.</p>
 <p>There is <strong>no analytics SDK</strong>. The game notes what happened during a session in memory so the code can reason about the run; that note is never written to disk and never sent anywhere, and it disappears when you close the app.</p>
 </div>
@@ -89,34 +129,42 @@
 </div>
 
 <h2>What the game never asks for</h2>
-<p>There is no account of mine and no login. The game does not ask for your real name, email address, contacts, location, photos, camera, microphone, health data, bank or card details, or passwords. It does not read your device identifiers and it does not use the network for anything of its own.</p>
+<p>There is no account of mine and no login. The game does not ask for your real name, email address, contacts, location, photos, camera, microphone, health data, bank or card details, or passwords. It requests no runtime permissions on either platform.</p>
 
 <h2>Why I process this, and on what basis</h2>
-<p>The only processing that happens off your device is the Game Center score, and it happens because you switched it on: I rely on <strong>your consent</strong> for that, and you can withdraw it at any time with the same switch. Support email is processed to answer the request you made of me. Nothing else is processed at all.</p>
+<ul>
+  <li><strong>The world board</strong>: because you switched it on. That is your <strong>consent</strong>, and the same switch withdraws it — which also deletes what was published.</li>
+  <li><strong>Advertising</strong>: where a consent form is required, on your <strong>consent</strong> through that form, which you can change at any time in Settings. Where it is not required, on my <strong>legitimate interest</strong> in funding a free game with non-personalised advertising.</li>
+  <li><strong>Support email</strong>: to answer the request you made of me.</li>
+</ul>
 
 <h2>Who else is involved</h2>
-<p>Only <strong>Apple</strong> — App Store distribution, and Game Center for the optional leaderboard. There is no third-party SDK, no advertising partner, no analytics vendor, and no database of mine.</p>
-<p><strong>I do not sell personal information, and I do not share it for advertising.</strong></p>
+<ul>
+  <li><strong>Google</strong> — AdMob for the banner, and Firebase (Cloud Firestore and Anonymous Authentication) for the world board.</li>
+  <li><strong>Apple</strong> and <strong>Google Play</strong> — app distribution.</li>
+</ul>
+<p><strong>I do not sell personal information, and I do not share it for cross-context behavioural advertising beyond what the consent form above describes.</strong></p>
 
 <h2>Where the data goes</h2>
-<p>Apple may process Game Center information in countries other than the one you live in, under Apple's own terms and transfer protections. I hold no data of yours anywhere, so there is nothing of mine to transfer.</p>
+<p>Firebase and AdMob are operated by Google and may process information on servers outside the country you live in, under Google's own terms and transfer protections. I hold no separate database of my own.</p>
 
 <h2>Security</h2>
-<p>The save file sits in the app's own sandboxed storage, which iOS protects along with the rest of your device. The Game Center connection is Apple's, over their own secured transport. Since I run no server and store nothing, there is no database of mine to be breached. No method of storage or transmission is completely secure, and I will not pretend otherwise.</p>
+<p>The save file sits in the app's own sandboxed storage, which your phone protects along with the rest of the device. Everything that leaves the app travels over HTTPS. The world board's rules allow a player to write only their own row and never to lower a score, and reports can be written but never read back by players. No method of storage or transmission is completely secure, and I will not pretend otherwise.</p>
 
 <h2>Children</h2>
-<p>The game is not aimed at children below the minimum digital-consent age in their country, and it does not collect personal information from anyone, children included. If you have a concern, email me at <a href="mailto:datvu.meo@gmail.com">datvu.meo@gmail.com</a>.</p>
+<p>The game is <strong>not directed at children</strong>. It is a general-audience puzzle, it shows advertising, and it carries a public leaderboard with names players choose, so it is not designed for or aimed at children below the minimum digital-consent age in their country, and I do not knowingly collect personal information from them. If you believe a child has published something through this game, email me and I will remove it.</p>
 
 <h2>Your choices</h2>
 <ul>
-  <li>Play with Game Center off — that is how it arrives, and it stays off until you turn it on.</li>
-  <li>Turn it off at any time in <strong>Settings → Game Center</strong>; nothing further is posted.</li>
-  <li>Erase every score and setting on the device with <strong>Settings → Erase my data</strong>.</li>
-  <li>Manage or delete your Game Center data in iOS <strong>Settings ▸ Game Center</strong>.</li>
+  <li>Play with the world board off — that is how it arrives, and it stays off until you turn it on.</li>
+  <li>Turn it off at any time in <strong>Settings → World board</strong>; the rows and the anonymous account are deleted.</li>
+  <li>Change your ad consent in <strong>Settings → Ad privacy choices</strong>, where that choice applies to you.</li>
+  <li>Hide any player from your board, and unhide everyone again, from Settings.</li>
+  <li>Report a name that should not be on the board.</li>
+  <li>Delete the app to remove everything held on the device.</li>
   <li>Email me with a question, a request, or a complaint about any of this.</li>
   <li>Complain to your local data-protection authority if you are in a country that has one.</li>
 </ul>
-<p>Deleting the app removes the local save the way iOS normally does. It does not remove a Game Center score, because that score is part of your Apple Account rather than part of the app.</p>
 
 <h2>Changes</h2>
 <p>I will update this page when the game, its providers, or the law changes, and the new effective date will appear at the top.</p>
