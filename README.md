@@ -14,6 +14,13 @@
 | Privacy Policy | [https://atinezblue.github.io/game/make10/privacy.html](https://atinezblue.github.io/game/make10/privacy.html) |
 | Support | [https://atinezblue.github.io/game/make10/support.html](https://atinezblue.github.io/game/make10/support.html) |
 
+## Quintap
+
+| Page | URL |
+|---|---|
+| Privacy Policy | [https://atinezblue.github.io/game/quintap/privacy.html](https://atinezblue.github.io/game/quintap/privacy.html) |
+| Support | [https://atinezblue.github.io/game/quintap/support.html](https://atinezblue.github.io/game/quintap/support.html) |
+
 ## app-ads.txt
 
 The authoritative copy is served from the domain root at
