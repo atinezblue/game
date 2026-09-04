@@ -49,6 +49,7 @@
   <h1>Privacy Policy</h1>
   <p class="meta">Quintap</p>
   <p class="meta">Effective date: 4 September 2026</p>
+  <p class="meta">Last updated: 4 September 2026</p>
 </header>
 
 <nav class="top"><a href="support.html">Support</a></nav>
@@ -67,6 +68,7 @@
 <div class="card">
 <p>One save file holds your campaign level, the best grade you have earned on every level you have cleared, your journey counters (first-try S levels, best quality combo, daily streak), the chapter of ten levels you are in the middle of, your settings (sound, vibration, reduce motion, appearance), and how far you got through the tutorial. The run in progress carries its board seed and the list of taps you made on it, so a board can be replayed exactly; that list never leaves the device either.</p>
 <p>While you are signed out I never receive any of it. Deleting the app removes the file the way your phone normally does.</p>
+<p>Two more files appear only once you have used the features that need them. Signing in writes the session file described under <a href="#account">the account</a> below. Opening the leaderboard writes a copy of the page of rows it just fetched — other players’ public display names, their counts and their positions — so the board can be shown at once the next time you open it instead of leaving you at a spinner. That copy is refreshed about every ten minutes while the card is open, holds nothing that is not already public to every signed-in player, and is never uploaded anywhere. Google’s ad SDK also stores your answer to its consent form, where that form applies to you, so it is not asked again on every launch.</p>
 </div>
 
 <h2>Advertising</h2>
@@ -87,14 +89,14 @@
   <p>There is no paid option to remove the banner today.</p>
 </div>
 
-<h2>The account, if you create one</h2>
+<h2 id="account">The account, if you create one</h2>
 <div class="card">
   <h3>How it starts</h3>
   <p>It starts when you tap <strong>Continue with Google</strong> or <strong>Continue with Apple</strong> on the account card, and not before. Until then no account of any kind exists for you, no request is made, and the whole campaign — every level, every crest, every setting — works exactly as it does with one. Nothing in the game is behind the sign-in except the leaderboard and the backup.</p>
 </div>
 <div class="card">
   <h3>What the sign-in itself creates</h3>
-  <p>The game trades the credential your provider hands back for a session on <strong>Google Firebase Authentication</strong>, in a project I control. Firebase then holds an account record for you: a user id it generated, which provider you used, and whatever that provider passed along with the credential — typically the email address on your Google or Apple account and the display name on it. I can see that record in the Firebase console; the game itself keeps only the display name, in memory, and writes nothing to your phone but a refresh token so you are not asked to sign in again every launch.</p>
+  <p>The game trades the credential your provider hands back for a session on <strong>Google Firebase Authentication</strong>, in a project I control. Firebase then holds an account record for you: a user id it generated, which provider you used, and whatever that provider passed along with the credential — typically the email address on your Google or Apple account and the display name on it. I can see that record in the Firebase console. The game itself never receives the email address; what it keeps is a small file in its own storage holding a refresh token, so you are not asked to sign in again every launch, together with which provider you used and the display name to print on the account card. Signing out deletes that file.</p>
   <p>If you use <strong>Sign in with Apple</strong> you can choose <em>Hide My Email</em> in Apple's own sheet, and then the address Firebase records is Apple's relay address rather than your real one.</p>
 </div>
 <div class="card">
@@ -121,7 +123,8 @@
     <tr><td>Name</td><td>The display name on the Google or Apple account you signed in with. Public — everyone who opens the board sees it.</td></tr>
     <tr><td>Levels perfected</td><td>How many levels you have graded S. This is what the board ranks by.</td></tr>
     <tr><td>Level</td><td>The campaign level you have reached.</td></tr>
-    <tr><td>Ranking score</td><td>Those two numbers folded into one sortable integer, with the moment you reached your count as the tie-break.</td></tr>
+    <tr><td>Reached at</td><td>The minute you reached your current count of perfected levels, which is the tie-break between two players on the same count.</td></tr>
+    <tr><td>Ranking score</td><td>The count and that moment folded into one sortable integer, so the board is a single ordered query.</td></tr>
     <tr><td>Updated at</td><td>When the row was last written.</td></tr>
   </table></div>
   <p>Nothing else goes up. No row exists until you have perfected a level, and a session that did not improve your standing writes nothing at all. The board is only readable by signed-in players; a player who never signs in neither publishes a row nor sees anyone else's.</p>
@@ -129,7 +132,7 @@
 <div class="card">
   <h3>Your name on the board</h3>
   <p><strong>The name comes from your provider, and today the game has no field to change it.</strong> If the display name on your Google or Apple account is your real name, that is the name other players will see. If you would rather not publish it, either change the display name on the account you sign in with, or play signed out — the whole campaign works without an account.</p>
-  <p>When a provider hands back no name at all — which is what happens to a Sign in with Apple account created on Android — the board shows a generated stand-in such as "Player 8F2C" instead.</p>
+  <p>When a provider hands back no name at all, the board shows a generated stand-in such as “Player 8F2C” instead, so a row is never blank. Sign in with Apple can also be set to hide your name, in which case that stand-in is what other players see.</p>
   <p>If a name on the board is offensive or should not be there, email me and I will remove it.</p>
 </div>
 <div class="card">
