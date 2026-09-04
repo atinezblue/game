@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your account — Quintap</title>
+<style>
+  :root {
+    --bg: #fff8ee; --card: #fffaf2; --ink: #16201b; --muted: #8a7468;
+    --line: #ead8c7; --accent: #2e8f5e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16201b; --card: #1e2a23; --ink: #f4f8f5; --muted: #9db0a4;
+      --line: #2c3a31; --accent: #4fc98b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 24px 16px 64px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  header { margin-bottom: 26px; }
+  h1 { font-size: 1.6rem; margin: 0 0 6px; }
+  h2 { font-size: 1.1rem; margin: 32px 0 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .meta { color: var(--muted); font-size: .92rem; margin: 2px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+  .card h3 { font-size: 1rem; margin: 0 0 8px; }
+  a { color: var(--accent); }
+  ul, ol { padding-left: 20px; }
+  ol li { margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .scroll { overflow-x: auto; }
+  nav.top { display: flex; gap: 8px; margin-bottom: 24px; }
+  nav.top a {
+    text-decoration: none; border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 14px; color: var(--ink); font-size: .9rem; background: var(--card);
+  }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Delete your account and its data</h1>
+  <p class="meta">Quintap, by Dat Vu</p>
+  <p class="meta">Last updated: 5 September 2026</p>
+</header>
+
+<nav class="top"><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></nav>
+
+<p><strong>Quintap has no account until you make one.</strong> The whole game — every level, every grade, every setting — works signed out, and nothing is uploaded from a game nobody signed into. An account exists only if you tapped <em>Continue with Google</em> or <em>Continue with Apple</em>, and this page is how you undo that.</p>
+
+<h2>Delete it from inside the game</h2>
+<div class="card">
+  <h3>Four taps, and it is done</h3>
+  <ol>
+    <li>Open <strong>Quintap</strong>.</li>
+    <li>Open <strong>Settings</strong> from the main menu.</li>
+    <li>Under <strong>Your account</strong>, tap the row showing your name.</li>
+    <li>Tap <strong>Delete my account data</strong>.</li>
+  </ol>
+  <p>The key is destructive and says so; there is no undo. On iOS, Apple's own sheet appears once more first so that Sign in with Apple can be revoked at the same time — dismissing that sheet does not stop the deletion.</p>
+  <p><strong>Signing out is not deleting.</strong> Sign out ends the session on that phone and leaves your saved campaign and your leaderboard row on the server. Only the delete key removes them.</p>
+</div>
+
+<h2>Delete it by email</h2>
+<div class="card">
+  <p>If you cannot reach the key — you uninstalled the game, you lost the phone, or the sign-in itself is failing — email <a href="mailto:datvu.meo@gmail.com">datvu.meo@gmail.com</a> with the subject <strong>Delete my Quintap account</strong>, and tell me:</p>
+  <ul>
+    <li>whether you signed in with <strong>Google</strong> or with <strong>Apple</strong>;</li>
+    <li>the email address on that account, sent <em>from</em> that address if you can, so I can match the record;</li>
+    <li>the display name that appears on the leaderboard, if you know it.</li>
+  </ul>
+  <p>I delete the account by hand within <strong>30 days</strong> and reply when it is done. I ask for those details only to find the right record, and I do not use them for anything else.</p>
+</div>
+
+<h2>What is deleted</h2>
+<div class="card">
+  <p>All of it, immediately, and not merely hidden:</p>
+  <div class="scroll"><table>
+    <tr><th>What</th><th>Where it lived</th></tr>
+    <tr><td>Your backed-up campaign — level reached, the grade on each level cleared, journey counters and totals</td><td><code>/saves/&lt;your user id&gt;</code> in Cloud Firestore</td></tr>
+    <tr><td>Your leaderboard row — display name, levels perfected, campaign level and the tie-break time</td><td><code>/players/&lt;your user id&gt;</code> in Cloud Firestore</td></tr>
+    <tr><td>The account record itself — the user id, which provider you used, and the email address and display name that provider passed along</td><td>Firebase Authentication</td></tr>
+    <tr><td>The session file holding your refresh token and display name</td><td>Your phone's app storage</td></tr>
+  </table></div>
+  <p>Your name comes off the public board with the row. No copy of any of it is kept elsewhere: I hold no database of my own.</p>
+</div>
+
+<h2>What is kept, and for how long</h2>
+<div class="card">
+  <ul>
+    <li><strong>The campaign on your phone is untouched.</strong> It is a file in the app's own storage and it was never mine to delete — you keep playing exactly where you were, signed out. To remove that too, delete the app, which is how your phone removes it.</li>
+    <li><strong>Support emails</strong>, if you ever wrote to me, are kept for <strong>12 months</strong> from the last message and then deleted — including a deletion request sent by email, which I keep as the record that you asked and I acted.</li>
+    <li><strong>Advertising data</strong> held by Google AdMob is not part of your account and is not tied to it. It is governed by <a href="https://policies.google.com/technologies/partner-sites">Google's own terms</a>; on Android you can reset or delete your advertising ID in <strong>Settings ▸ Google ▸ Ads</strong>, and on iOS in <strong>Settings ▸ Privacy &amp; Security</strong>.</li>
+  </ul>
+  <p>Deleted documents may survive a short while in Google's routine infrastructure backups before they age out. Nothing is retained beyond that, and nothing deleted is ever restored to the board.</p>
+</div>
+
+<h2>Contact</h2>
+<p>
+  Dat Vu<br>
+  Ho Chi Minh City, Vietnam<br>
+  <a href="mailto:datvu.meo@gmail.com">datvu.meo@gmail.com</a>
+</p>
+
+<footer>Quintap · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></footer>
+
+</main>
+</body>
+</html>
